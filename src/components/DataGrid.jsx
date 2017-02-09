@@ -11,18 +11,18 @@ class DataGrid extends React.Component {
         this.props.dispatch(orderActions.fetch());
     }
     render() {
-        const columnDefs = [{ headerName: 'Order Date', field: 'orderDate' },
+        const columnDefs = [
+        { headerName: 'Count', field: 'count',aggFunc: 'sum' },
+        { headerName: 'Order Date', field: 'orderDate' },
         { headerName: 'Delivery Country', field: 'deliveryCountry'},
-        { headerName: 'Manufacturer', field: 'manufacturer' },
-        { headerName: 'Gender', field: 'gender'},
-        { headerName: 'Size', field: 'size' },
+        { headerName: 'Manufacturer', field: 'manufacturer',rowGroupIndex: 1},
+        { headerName: 'Gender', field: 'gender', rowGroupIndex: 0},
+        { headerName: 'Size', field: 'size'},
         { headerName: 'Colour', field: 'colour' },
-        { headerName: 'Style', field: 'style' },
-        { headerName: 'Count', field: 'count' }
-        ];
+        { headerName: 'Style', field: 'style' }];
 
         const divStyle = {
-            height: '600px'
+            height: '450px'
         };
 
         return (

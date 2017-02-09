@@ -1,4 +1,25 @@
 {
+    "reports": [{
+            "id": 1,
+            "name": "Top selling sizes by Country"
+        },
+        {
+            "id": 2,
+            "name": "Top selling Manufacturers by Gender"
+        },
+        {
+            "id": 3,
+            "name": "Top selling Manufacturers by Country"
+        },
+        {
+            "id": 4,
+            "name": "Top selling months globally"
+        },
+        {
+            "id": 5,
+            "name": "Top selling months by Country"
+        }
+    ],
     "orders": [{
             "id": 1,
             "orderDate": "03/02/2017",
