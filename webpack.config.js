@@ -49,7 +49,6 @@ config.plugins.push(new HtmlWebpackPlugin({
     template: './src/index.html'
 }));
 
-
 /* Generate global variables that can be used throughout the application */
 var buildDate = JSON.stringify(moment().format('DD-MM-YYYY HH:mm'));
 
@@ -59,7 +58,7 @@ var globals = {
         COMMIT: JSON.stringify(COMMIT),
         DATE: buildDate
     }
-}
+};
 
 /* Build enhancements for deployment */
 if (ENV === 'build') {
@@ -80,6 +79,7 @@ config.plugins.push(new webpack.LoaderOptionsPlugin({
         }
     }
 }));
+
 config.plugins.push(new webpack.DefinePlugin(globals));
 config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
     names: ['vendor', 'manifest']
@@ -88,19 +88,19 @@ config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
 config.module = {
     rules: [{
             test: /\.jsx?$/,
-            user: 'eslint-loader',
+            loader: 'eslint-loader',
             enforce: "pre",
             exclude: /node_modules/
         },
         {
             test: /\.html$/,
-            use: 'html-loader'
+            loader: 'html-loader'
         }, {
             test: /\.css$/,
-            use: 'css-loader'
+            loader: 'css-loader'
         }, {
             test: /\.jsx?$/,
-            use: 'babel-loader',
+            loader: 'babel-loader',
             exclude: /node_modules/
         },
         ENV === 'build' ? {
@@ -119,7 +119,7 @@ config.module = {
         },
         {
             test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-            use: 'file-loader',
+            loader: 'file-loader',
             query: {
                 name: '[hash].[ext]'
             }

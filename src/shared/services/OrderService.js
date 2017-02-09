@@ -7,10 +7,10 @@ class OrderService {
     }
     /** Get all orders for sales  */
     getOrders() {
-        const api = `${this.baseUri}orders.json`;
+        const api = `${this.baseUri}orders`;
         return resource.get(api, true);
     }
 
 }
 
-export const companyService = new CompanyService();
+export const orderService = new OrderService();

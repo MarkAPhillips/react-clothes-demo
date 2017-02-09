@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist && webpack --progress --colors",
+    "api-server": "json-server --watch mockDb.json",
     "start": "webpack-dev-server --port 800 --inline --content-base dist/ --history-api-fallback",
     "test": "mocha",
     "test:watch": "mocha --watch --reporter min"
@@ -44,6 +45,7 @@
     "html-webpack-plugin": "^2.25.0",
     "jsdom": "^9.10.0",
     "json-loader": "^0.5.4",
+    "json-server": "^0.9.4",
     "mocha": "^3.2.0",
     "node-sass": "^3.7.0",
     "postcss-loader": "^1.2.2",

@@ -7,7 +7,7 @@ const defaultHeader = {
 };
 
 function _validateStatus(status) {
-    return status >= AppConstants.STATUSCODES.OK && status < AppConstants.STATUSCODES.INTERNAL_SERVER_ERROR;
+    return status >= AppConstants.API.STATUSCODES.OK && status < AppConstants.API.STATUSCODES.INTERNAL_SERVER_ERROR;
 };
 
 class Resource {
@@ -16,7 +16,7 @@ class Resource {
             baseURL: AppConstants.API.URI,
             timeout: AppConstants.API.TIMEOUT_MS,
             headers: defaultHeader,
-            validateStatus : _validateStatus
+            validateStatus: _validateStatus
         });
     }
 
@@ -25,6 +25,7 @@ class Resource {
         return this.instance.get(resource).then((response) => {
             return response;
         }).catch((error) => {
+            /** TODO: Handle errors on API calls globally */
             console.log('Error response', error);
         });
     }
