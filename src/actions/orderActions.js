@@ -1,8 +1,8 @@
-import * as types from '../actionTypes';
-import {orderService} from '../../../shared/services/OrderService';
-
+import * as types from './actionTypes';
+import {orderService} from '../shared/services/OrderService';
 
 export function onSuccess(response) {
+    const data = response.data;
     return {
         type: types.ORDERS_FETCH_SUCCESS,
         data
@@ -26,7 +26,7 @@ export function fetch() {
     return (dispatch) => {
         dispatch(onStart());
         orderService.getOrders().then((response) => {
-            if (response != null ) {
+            if (response != null) {
                 dispatch(onSuccess(response));
             } else {
                 dispatch(onError());

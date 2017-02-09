@@ -6,17 +6,15 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     childProcess = require('child_process'),
-    COMMIT = childProcess.execSync('git rev-parse --short HEAD').toString();
-
-var ENV = process.env.npm_lifecycle_event;
+    COMMIT = childProcess.execSync('git rev-parse --short HEAD').toString(),
+    ENV = process.env.npm_lifecycle_event;
 
 var config = {};
 
 config.entry = {
     app: ['./src/'],
     style: './src/assets/sass/main.scss',
-    vendor: [
-        'ag-grid',
+    vendor:  ['ag-grid-enterprise',
         'ag-grid-react',
         'immutable',
         'moment',
@@ -63,12 +61,19 @@ var globals = {
 /* Build enhancements for deployment */
 if (ENV === 'build') {
     globals['process.env.NODE_ENV'] = '"production"';
+    var uglifyOpts = {
+        sourceMap: false,
+        compress: {
+            warnings: false
+        },
+        mangle: false,
+        output: {
+            comments: false
+        }
+    };
 
     /* Minifies the code */
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true
-    }));
-
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin(uglifyOpts));
     config.plugins.push(new ExtractTextPlugin('[name].[chunkHash].css'));
 }
 

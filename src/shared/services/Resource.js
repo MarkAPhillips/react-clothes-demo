@@ -7,7 +7,7 @@ const defaultHeader = {
 };
 
 function _validateStatus(status) {
-    return status >= AppConstants.API.STATUSCODES.OK && status < AppConstants.API.STATUSCODES.INTERNAL_SERVER_ERROR;
+    return status >= AppConstants.API.STATUS_CODES.OK && status < AppConstants.API.STATUS_CODES.INTERNAL_SERVER_ERROR;
 };
 
 class Resource {

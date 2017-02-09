@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import { environment } from '../shared/';
 
+/** Used to debug Redux on Chrome in the DEV environment */
 const setDevToolsExtension = () => {
     return window.devToolsExtension && !environment.isProd() ? window.devToolsExtension() : (f) => f;
 };
