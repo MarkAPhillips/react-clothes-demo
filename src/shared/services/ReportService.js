@@ -11,6 +11,10 @@ class ReportService {
         const api = `${this.baseUri}reports`;
         return resource.get(api);
     }
+    getReportById(id){
+        const api = `${this.baseUri}reports/${id}`;
+        return resource.get(api);
+    }
 }
 
 export const reportService = new ReportService();

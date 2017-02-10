@@ -1,23 +1,104 @@
 {
     "reports": [{
             "id": 1,
-            "name": "Top selling sizes by Country"
+            "name": "Top selling sizes by Country",
+            "colDefs": [{
+                    "headerName": "Count",
+                    "field": "count",
+                    "aggFunc": "sum"
+                },
+                {
+                    "headerName": "Order Date",
+                    "field": "orderDate"
+                },
+                {
+                    "headerName": "Delivery Country",
+                    "field": "deliveryCountry",
+                    "rowGroupIndex": 0
+                },
+                {
+                    "headerName": "Manufacturer",
+                    "field": "manufacturer"
+                },
+                {
+                    "headerName": "Gender",
+                    "field": "gender"
+                },
+                {
+                    "headerName": "Size",
+                    "field": "size",
+                    "rowGroupIndex": 1
+                },
+                {
+                    "headerName": "Colour",
+                    "field": "colour"
+                },
+                {
+                    "headerName": "Style",
+                    "field": "style"
+                }
+            ]
         },
         {
             "id": 2,
-            "name": "Top selling Manufacturers by Gender"
+            "name": "Top selling Manufacturers by Gender",
+            "colDefs": [{
+                    "headerName": "Count",
+                    "field": "count",
+                    "aggFunc": "sum"
+                },
+                {
+                    "headerName": "Order Date",
+                    "field": "orderDate"
+                },
+                {
+                    "headerName": "Delivery Country",
+                    "field": "deliveryCountry"
+                },
+                {
+                    "headerName": "Manufacturer",
+                    "field": "manufacturer",
+                    "rowGroupIndex": 1
+                },
+                {
+                    "headerName": "Gender",
+                    "field": "gender",
+                    "rowGroupIndex": 0
+                },
+                {
+                    "headerName": "Size",
+                    "field": "size"
+                },
+                {
+                    "headerName": "Colour",
+                    "field": "colour"
+                },
+                {
+                    "headerName": "Style",
+                    "field": "style"
+                }
+            ]
         },
         {
             "id": 3,
-            "name": "Top selling Manufacturers by Country"
+            "name": "Top selling Manufacturers by Country",
+            "colDefs": [{
+
+            }]
         },
         {
             "id": 4,
-            "name": "Top selling months globally"
+            "name": "Top selling months globally",
+            "colDefs": [{
+
+            }]
         },
         {
             "id": 5,
-            "name": "Top selling months by Country"
+            "name": "Top selling months by Country",
+            "colDefs": [{
+
+            }]
         }
     ],
     "orders": [{

@@ -1,4 +1,4 @@
-export const columnDefs = [{
+export const columnDefsInitialState = [{
         headerName: 'Order Date',
         field: 'orderDate'
     },

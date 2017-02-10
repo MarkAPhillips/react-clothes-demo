@@ -13,7 +13,6 @@ describe('Report Service specs', () => {
         resourceStub.restore();
     });
 
-
     describe('when getting all reports', () => {
         beforeEach(() => {
             reportService.getReports();
@@ -22,6 +21,17 @@ describe('Report Service specs', () => {
         it('should verify that resource get is called with the correct arguments', () => {
             const args = resourceStub.getCall(0).args;
             args[0].should.equal('http://localhost:3000/reports');
+        });
+    });
+
+    describe('when getting a report by Id', () => {
+        beforeEach(() => {
+            reportService.getReportById(1);
+        });
+
+        it('should verify that resource get is called with the correct arguments', () => {
+            const args = resourceStub.getCall(0).args;
+            args[0].should.equal('http://localhost:3000/reports/1');
         });
     });
 });

@@ -11,15 +11,9 @@ export default function orders(state = initialState, action) {
         case types.REPORTS_FETCH_START:
             return state;
         case types.REPORTS_FETCH_SUCCESS:
-            return state.mergeDeep({
-                data: action.data
-            });
+           return state.setIn(['data'], action.data);
         case types.REPORTS_FETCH_FAILED:
-            return state.mergeDeep({
-                error: action.error
-            });
-        case types.REPORTS_RESET:
-            return initialState;
+            return state.setIn(['error'], action.error);
         default:
             return state;
     }

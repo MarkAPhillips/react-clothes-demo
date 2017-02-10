@@ -1,35 +1,27 @@
 import * as types from './actionTypes';
-import {orderService} from '../shared/services/ReportService';
+import {reportService} from '../shared/services/ReportService';
 
-export function onSuccess(response) {
+export function onSuccess(response, type) {
     const data = response.data;
-    return {
-        type: types.ORDERS_FETCH_SUCCESS,
-        data
-    };
+    return {type,data};
 }
 
-export function onStart() {
-    return {
-        type: types.ORDERS_FETCH_START
-    };
+export function onStart(type) {
+    return { type };
 }
 
-export function onError(response) {
-    return {
-        type: types.ORDERS_FETCH_FAILED,
-        error: response
-    };
+export function onError(response,type) {
+    return { type,error: response};
 };
 
-export function fetch() {
+export function onFetch() {
     return (dispatch) => {
-        dispatch(onStart());
-        orderService.getOrders().then((response) => {
+        dispatch(onStart(types.REPORTS_FETCH_START));
+        reportService.getReports().then((response) => {
             if (response != null) {
-                dispatch(onSuccess(response));
+                dispatch(onSuccess(response,types.REPORTS_FETCH_SUCCESS));
             } else {
-                dispatch(onError());
+                dispatch(onError(types.REPORTS_FETCH_FAILED));
             }
         });
     };

@@ -22,7 +22,7 @@ export function onError(response) {
     };
 };
 
-export function fetch() {
+export function onFetch() {
     return (dispatch) => {
         dispatch(onStart());
         orderService.getOrders().then((response) => {

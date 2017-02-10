@@ -1,12 +1,16 @@
 import reducer from '../../src/reducers/reportReducer';
 import * as types from '../../src/actions/actionTypes';
+import {columnDefsInitialState} from '../../src/config/gridConfig';
+
 import Immutable from 'immutable';
 
-describe('Order reducer specs', () => {
+describe('Report reducer specs', () => {
     let reportState;
     const initialState = Immutable.fromJS({
         data: [],
-        error: null
+        error: null,
+        reportId: null,
+        columnDefs: columnDefsInitialState
     });
 
     it('should return the initial state', () => {
@@ -35,7 +39,9 @@ describe('Order reducer specs', () => {
                 id: 1,
                 name: 'Report 1'
             }],
-            error: null
+            error: null,
+            reportId: null,
+            columnDefs: columnDefsInitialState
         })).should.be.true;
     });
 
@@ -47,7 +53,9 @@ describe('Order reducer specs', () => {
 
         Immutable.is(reportState, Immutable.fromJS({
             data: [],
-            error: 'Error occurred'
+            error: 'Error occurred',
+            reportId: null,
+            columnDefs: columnDefsInitialState
         })).should.be.true;
     });
 
