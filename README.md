@@ -1,5 +1,12 @@
 # React Sales Demo 
 
+Master : [![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master.svg?style=svg)](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master)
+
+Develop : [![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/develop.svg?style=svg)](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/develop)
+
+[![devDependency Status](https://david-dm.org/MarkAPhillips/react-datagrid-demo/dev-status.svg)](https://david-dm.org/MarkAPhillips/react-datagrid-demo=devDependencies)
+[![Dependency Status](https://david-dm.org/MarkAPhillips/react-datagrid-demo.svg)](https://david-dm.org/MarkAPhillips/react-datagrid-demo)
+
 Sales order demonstation that uses React, Redux, Immutable, ES2015, Webpack and ag-Grid to display
 sales order data.
 
@@ -23,7 +30,7 @@ If real time data is required this can provided via connecting to web sockets.
 
 ## Prerequisites
 
-[![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master.svg?style=svg)](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master)
+
 
 Install NodeJS  https://nodejs.org/
 

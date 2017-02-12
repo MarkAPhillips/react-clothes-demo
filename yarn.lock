@@ -51,9 +51,9 @@ ag-grid-enterprise@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-8.0.0.tgz#cbef3d2635cdcbf6a9480080c09fa42b5fd952a0"
 
-ag-grid-react@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-7.2.0.tgz#62bceed32938c4ea131f374bd087cbf12130fb69"
+ag-grid-react@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-8.0.0.tgz#270c2250ca2fa83b56ae6f2429c4714996b47103"
 
 ag-grid@^8.0.0:
   version "8.0.0"
