@@ -23,7 +23,7 @@ describe('Report Service specs', () => {
 
         it('should return the correct value', () => {
             resourceStub().then((value) => {
-                value.should.equal([{}]);
+                value.should.deep.equal([{}]);
             });
         });
     });
@@ -45,7 +45,7 @@ describe('Report Service specs', () => {
 
         it('should return the correct value', () => {
             resourceStub().then((value) => {
-                value.should.equal({});
+                value.should.deep.equal({});
             });
         });
     });
