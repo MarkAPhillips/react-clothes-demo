@@ -5,7 +5,7 @@ Master : [![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/
 Develop : [![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/develop.svg?style=svg)](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/develop)
 
 [![devDependency Status](https://david-dm.org/MarkAPhillips/react-datagrid-demo/dev-status.svg)](https://david-dm.org/MarkAPhillips/react-datagrid-demo=devDependencies)
-[![Dependency Status](https://david-dm.org/MarkAPhillips/react-datagrid-demo.svg)](https://david-dm.org/MarkAPhillips/react-datagrid-demo)
+[![dependency Status](https://david-dm.org/MarkAPhillips/react-datagrid-demo.svg)](https://david-dm.org/MarkAPhillips/react-datagrid-demo)
 
 Sales order datagrid demonstration that uses React, Redux, Immutable, ES2015, Webpack and ag-grid(enterprise) to display
 sales order data.
