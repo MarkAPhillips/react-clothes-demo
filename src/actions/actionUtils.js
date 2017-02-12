@@ -1,7 +1,30 @@
 import moment from 'moment';
-import {
-    columnDefsInitialState
-} from '../config/gridConfig';
+import {columnDefsInitialState} from '../config/gridConfig';
+
+/** Add aggregate on a field definition*/
+function _createAggregate(item) {
+    return Object.assign({}, item, {
+        aggFunc: 'sum',
+        sort: 'desc'
+    });
+}
+
+/** Create grouping on a field definition */
+function _createGrouping(filter, item) {
+    if (filter.grouping != null && filter.grouping.length > 0) {
+        const match = filter.grouping.find((fieldName) => {
+            return item.field === fieldName;
+        });
+        if (match != null) {
+            return Object.assign({}, item, {
+                field: match,
+                rowGroupIndex: filter.grouping.indexOf(match)
+            });
+        } else {
+            return item;
+        }
+    }
+}
 
 const actionUtils = {
 
@@ -29,7 +52,7 @@ const actionUtils = {
     transformColumnDefsByFilter(filter) {
 
         /** Ensure aggregate appears as the first column in the col defs */
-        const initialState = columnDefsInitialState;
+        const initialState = [...columnDefsInitialState];
         let aggFieldIdx = columnDefsInitialState.findIndex((item) => {
             return item.field === filter.aggregate;
         });
@@ -37,29 +60,9 @@ const actionUtils = {
         initialState.unshift(initialState[aggFieldIdx]);
         initialState.splice(++aggFieldIdx, 1);
 
-        const colDefs = initialState.map((item) => {
-            if (item.field === filter.aggregate) {
-                return Object.assign({}, item, {
-                    aggFunc: 'sum',
-                    sort: 'desc'
-                });
-            } else {
-                if (filter.grouping != null && filter.grouping.length > 0) {
-                    const match = filter.grouping.find((fieldName) => {
-                        return item.field === fieldName;
-                    });
-                    if (match != null) {
-                        return Object.assign({}, item, {
-                            field: match,
-                            rowGroupIndex: filter.grouping.indexOf(match)
-                        });
-                    } else {
-                        return item;
-                    }
-                }
-            }
+        return initialState.map((item) => {
+            return (item.field === filter.aggregate) ? _createAggregate(item) : _createGrouping(filter, item);
         });
-        return colDefs;
     }
 };
 

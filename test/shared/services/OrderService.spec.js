@@ -6,7 +6,7 @@ describe('Order Service specs', () => {
     let resourceStub;
 
     beforeEach(() => {
-        resourceStub = sinon.spy(resource, 'get');
+        resourceStub = sinon.stub(resource, 'get').resolves([{}]);
     });
 
     afterEach(() => {
@@ -22,6 +22,12 @@ describe('Order Service specs', () => {
         it('should verify that resource get is called with the correct arguments', () => {
             const args = resourceStub.getCall(0).args;
             args[0].should.equal('http://localhost:3000/orders');
+        });
+
+        it('should return the correct value', () => {
+            resourceStub().then((value) => {
+                value.should.equal([{}]);
+            });
         });
     });
 });

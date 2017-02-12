@@ -11,22 +11,23 @@ function _validateStatus(status) {
 };
 
 class Resource {
-    constructor() {
-        this.instance = axios.create({
-            baseURL: AppConstants.API.URI,
-            timeout: AppConstants.API.TIMEOUT_MS,
-            headers: defaultHeader,
-            validateStatus: _validateStatus
-        });
-    }
-
     /** GET Http method */
     get(resource) {
-        return this.instance.get(resource).then((response) => {
+        return this.createInstance().get(resource).then((response) => {
             return response;
         }).catch((error) => {
             /** TODO: Handle errors on API calls globally */
             console.log('Error response', error);
+        });
+    }
+
+    /** Create axios instance based on default parameters */
+    createInstance(){
+        return axios.create({
+            baseURL: AppConstants.API.URI,
+            timeout: AppConstants.API.TIMEOUT_MS,
+            headers: defaultHeader,
+            validateStatus: _validateStatus
         });
     }
 }
