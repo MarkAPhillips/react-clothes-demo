@@ -34,8 +34,8 @@ class DataGrid extends React.Component {
                             columnDefs = {this.props.columnDefs}
                             rowSelection="multiple"
                             enableSorting="true"
+                            enableColResize="true"
                             rowHeight="22"
-                            colWidth="278"
                         />
                     </div>
                 </div>

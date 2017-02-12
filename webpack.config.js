@@ -12,7 +12,7 @@ var path = require('path'),
 var config = {};
 
 config.entry = {
-    app: ['./src/'],
+    app: ['babel-polyfill','./src/'],
     style: './src/assets/sass/main.scss',
     vendor:  ['ag-grid-enterprise',
         'ag-grid-react',

@@ -11,6 +11,7 @@ describe('Order reducer specs', () => {
 
     it('should return the initial state', () => {
         ordersState = reducer(undefined, {});
+        ordersState.should.have.keys('data','error');
         ordersState.should.deep.equal(initialState);
     });
 
@@ -29,14 +30,15 @@ describe('Order reducer specs', () => {
                 country: 'France'
             }]
         });
-
-        Immutable.is(ordersState, Immutable.fromJS({
-            data: [{
+        
+        const ordersStateObj = ordersState.toJS();
+        ordersStateObj.should.deep.equal({
+             data: [{
                 id: 1,
                 country: 'France'
             }],
-            error: null
-        })).should.be.true;
+            error:null
+        });
     });
 
     it('should handle ORDERS_FETCH_FAILED', () => {
@@ -45,9 +47,7 @@ describe('Order reducer specs', () => {
             error: 'Error occurred'
         });
 
-        Immutable.is(ordersState, Immutable.fromJS({
-            data: [],
-            error: 'Error occurred'
-        })).should.be.true;
+        ordersState.should.have.property('error', 'Error occurred');
+        ordersState.should.have.property('data').that.is.empty;
     });
 });

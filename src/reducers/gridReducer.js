@@ -1,10 +1,13 @@
 import * as types from '../actions/actionTypes';
 import Immutable from 'immutable';
-import {columnDefsInitialState} from '../config/gridConfig';
+import {
+    columnDefsInitialState
+} from '../config/gridConfig';
 
 const initialState = Immutable.fromJS({
-    reportId: null,
-    colDefs: columnDefsInitialState
+    reportId: '',
+    colDefs: columnDefsInitialState,
+    error: null
 });
 
 export default function orders(state = initialState, action) {
@@ -14,7 +17,8 @@ export default function orders(state = initialState, action) {
         case types.GRID_SELECTED_START:
             return state;
         case types.GRID_SELECTED_SUCCESS:
-           return state.setIn(['colDefs'], action.colDefs);
+            return state .setIn(['reportId'], action.reportId)
+                    .setIn(['colDefs'], action.colDefs);
         case types.GRID_SELECTED_FAILED:
             return state.setIn(['error'], action.error);
         default:

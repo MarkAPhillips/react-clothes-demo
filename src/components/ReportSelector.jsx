@@ -13,13 +13,15 @@ class ReportSelector extends React.Component {
     }
     handleOnChange(event) {
         const selectedValue = event.target.value;
-        this.props.dispatch(gridActions.onSelect(selectedValue));
+        if(selectedValue!==''){
+            this.props.dispatch(gridActions.onSelect(selectedValue));
+        }
     }
     render() {
         return (
             <div className="form-group">
                 <label htmlFor="{this.props.id}" className="sr-only">Report: </label>
-                <select id={this.props.id} name={this.props.id} className="form-control" onChange={this.handleOnChange}>
+                <select id={this.props.id} name={this.props.id} className="form-control" value={this.props.reportId} onChange={this.handleOnChange}>
                     <option value="">{this.props.defaultOptionValue || 'Select Report...'}</option>
                     {
                             this.props.reports.map((item) => {
@@ -34,13 +36,15 @@ class ReportSelector extends React.Component {
 ReportSelector.propTypes = {
     dispatch: PropTypes.func,
     id: PropTypes.string.isRequired,
+    reportId: PropTypes.string,
     defaultOptionValue: PropTypes.string,
     reports : PropTypes.array
 };
 
 const mapStateToProps = (state) => {
     return {
-        reports: state.reports.toJS().data
+        reports: state.reports.toJS().data,
+        reportId : state.grid.get('reportId')
     };
 };
 export default connect(mapStateToProps)(ReportSelector);

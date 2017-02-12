@@ -1,10 +1,10 @@
 global.chai = require('chai');
-global.expect = require('chai').expect;
 global.sinon = require('sinon');
 global.should = require('chai').should();
 
-require('sinon-as-promised');
+const chaiImmutable = require('chai-immutable');
 
+global.chai.use(chaiImmutable);
 
 const jsdom = require('jsdom').jsdom;
 const document = jsdom( '<html/>' );

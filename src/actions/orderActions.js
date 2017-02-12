@@ -1,8 +1,9 @@
 import * as types from './actionTypes';
 import {orderService} from '../shared/services/OrderService';
+import {actionUtils} from './actionUtils';
 
 export function onSuccess(response) {
-    const data = response.data;
+    const data = actionUtils.extendData(response.data);
     return {
         type: types.ORDERS_FETCH_SUCCESS,
         data

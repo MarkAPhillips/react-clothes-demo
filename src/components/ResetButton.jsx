@@ -1,6 +1,7 @@
 import React,{PropTypes} from 'react';
 import * as gridActions from '../actions/gridActions';
 import { connect } from 'react-redux';
+import {events} from '../shared/';
 
 class ResetButton extends React.Component {
      constructor(props) {
@@ -8,9 +9,7 @@ class ResetButton extends React.Component {
         this.handleReset = this.handleReset.bind(this);
     }
     handleReset(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.nativeEvent.stopImmediatePropagation();
+        events.stopEventPropagation(event);
         this.props.dispatch(gridActions.onReset());
     }
     render() {
