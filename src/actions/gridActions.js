@@ -22,7 +22,7 @@ export function onReset() {
 export function onSelect(reportId) {
     return (dispatch) => {
         dispatch(onStart(types.GRID_SELECTED_START));
-        reportService.getReportById(reportId).then((response) => {
+        return reportService.getReportById(reportId).then((response) => {
             if (response != null) {
                 dispatch(onSuccess(response, reportId, types.GRID_SELECTED_SUCCESS));
             } else {

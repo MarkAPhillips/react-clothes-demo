@@ -38,7 +38,7 @@ describe('Report Service specs', () => {
             reportService.getReportById(1);
         });
 
-        it('should verify that resource get is called with the correct arguments', () => {
+        it('should verify that resource getbyId is called with the correct arguments', () => {
             const args = resourceStub.getCall(0).args;
             args[0].should.equal('http://localhost:3000/reports/1');
         });

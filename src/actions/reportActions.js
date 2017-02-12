@@ -17,7 +17,7 @@ export function onError(response,type) {
 export function onFetch() {
     return (dispatch) => {
         dispatch(onStart(types.REPORTS_FETCH_START));
-        reportService.getReports().then((response) => {
+        return reportService.getReports().then((response) => {
             if (response != null) {
                 dispatch(onSuccess(response,types.REPORTS_FETCH_SUCCESS));
             } else {
