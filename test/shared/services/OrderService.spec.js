@@ -26,7 +26,7 @@ describe('Order Service specs', () => {
 
         it('should return the correct value', () => {
             resourceStub().then((value) => {
-                value.should.equal([{}]);
+                value.should.deep.equal([{}]);
             });
         });
     });
