@@ -1,4 +1,4 @@
-# React Sales Demo 
+# React Datagrid Sale Order Demostration 
 
 Master : [![CircleCI](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master.svg?style=svg)](https://circleci.com/gh/MarkAPhillips/react-datagrid-demo/tree/master)
 

@@ -1343,6 +1343,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
     create-hash "^1.1.0"
     inherits "^2.0.1"
 
+create-thenable@~1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/create-thenable/-/create-thenable-1.0.2.tgz#e2031720ccc9575d8cfa31f5c146e762a80c0534"
+  dependencies:
+    object.omit "~2.0.0"
+    unique-concat "~0.2.2"
+
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -3376,6 +3383,10 @@ nan@^2.3.0, nan@^2.3.2:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2"
 
+native-promise-only@~0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -3563,7 +3574,7 @@ object-keys@^1.0.8:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
 
-object.omit@^2.0.0:
+object.omit@^2.0.0, object.omit@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
   dependencies:
@@ -4636,6 +4647,13 @@ signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
+sinon-as-promised@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/sinon-as-promised/-/sinon-as-promised-4.0.2.tgz#120e9ce033daa39648dc429062fe660be1b5b412"
+  dependencies:
+    create-thenable "~1.0.0"
+    native-promise-only "~0.8.1"
+
 sinon@^1.17.7:
   version "1.17.7"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-1.17.7.tgz#4542a4f49ba0c45c05eb2e9dd9d203e2b8efe0bf"
@@ -5045,6 +5063,10 @@ uniqid@^4.0.0:
 uniqs@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/uniqs/-/uniqs-2.0.0.tgz#ffede4b36b25290696e6e165d4a59edb998e6b02"
+
+unique-concat@~0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/unique-concat/-/unique-concat-0.2.2.tgz#9210f9bdcaacc5e1e3929490d7c019df96f18712"
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

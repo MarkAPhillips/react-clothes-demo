@@ -5,3 +5,5 @@ npm-debug.log*
 
 /dist
 /node_modules
+
+test-results.xml
