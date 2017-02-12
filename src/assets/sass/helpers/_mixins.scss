@@ -1,0 +1,8 @@
+@mixin classPropGenerator($className, $maxInc, $cssProp) {
+   @for $i from 1 through $maxInc {
+        $inc : $i*5;
+        .#{$className}-#{$inc} {
+            #{$cssProp}:#{$inc}px;
+        }
+    }
+}

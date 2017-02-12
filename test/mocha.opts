@@ -1,0 +1,4 @@
+--compilers js:babel-register
+--require test/setup.js
+--reporter mocha-circleci-reporter
+test/**/*.spec.js
