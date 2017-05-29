@@ -1,45 +1,4 @@
 {
-    "reports": [{
-            "id": 1,
-            "name": "Top selling sizes by Country",
-            "filter": {
-                "grouping": ["deliveryCountry", "size"],
-                "aggregate": "count"
-            }
-        },
-        {
-            "id": 2,
-            "name": "Top selling Manufacturers by Gender",
-            "filter": {
-                "grouping": ["gender", "manufacturer"],
-                "aggregate": "count"
-            }
-        },
-        {
-            "id": 3,
-            "name": "Top selling Manufacturers by Country",
-            "filter": {
-                "grouping": ["deliveryCountry", "manufacturer"],
-                "aggregate": "count"
-            }
-        },
-        {
-            "id": 4,
-            "name": "Top selling months globally",
-            "filter": {
-                "grouping": ["year", "month"],
-                "aggregate": "count"
-            }
-        },
-        {
-            "id": 5,
-            "name": "Top selling months by Country",
-            "filter": {
-                "grouping": ["deliveryCountry", "year", "month"],
-                "aggregate": "count"
-            }
-        }
-    ],
     "orders": [{
             "id": 1,
             "orderDate": "2016-10-31T03:22:13Z",

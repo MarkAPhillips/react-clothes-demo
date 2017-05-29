@@ -14,8 +14,7 @@ var config = {};
 config.entry = {
     app: ['babel-polyfill','./src/'],
     style: './src/assets/sass/main.scss',
-    vendor:  ['ag-grid-enterprise',
-        'ag-grid-react',
+    vendor:  ['fin-hypergrid',
         'immutable',
         'moment',
         'axios',

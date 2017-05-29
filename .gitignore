@@ -1,9 +1,9 @@
 # Logs
 logs
 *.log
-npm-debug.log*
 
 /dist
 /node_modules
+.vs_code
 
 test-results.xml

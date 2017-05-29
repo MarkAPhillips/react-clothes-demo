@@ -1,13 +1,12 @@
 import React from 'react';
-import { Router, Route, IndexRoute} from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
-import Layout from './components/Layout';
-import DataGrid from './components/DataGrid';
+import App from './components/App';
 
-export default function (history) {
-    return (<Router history={history}>
-        <Route path="/" component={Layout}>
-            <IndexRoute component={DataGrid} />
-        </Route>
-    </Router>);
+export default function() {
+	return (
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+	);
 }
